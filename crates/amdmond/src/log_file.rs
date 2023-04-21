@@ -34,9 +34,8 @@ struct Stat {
 pub fn run(command: LogFile, config: Config) -> amdmond_lib::Result<()> {
     let fan_config = fan::load_config(DEFAULT_FAN_CONFIG_PATH)?;
 
-    let duration = std::time::Duration::from_millis(
-        command.interval.unwrap_or_else(|| config.interval()),
-    );
+    let duration =
+        std::time::Duration::from_millis(command.interval.unwrap_or_else(|| config.interval()));
     info!("Updating each: {:?}", duration);
 
     let _ = std::fs::remove_file(command.stat_file.as_str());

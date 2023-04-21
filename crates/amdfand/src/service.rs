@@ -164,7 +164,7 @@ mod tests {
         let fan = Fan::wrap(hw, &config);
 
         let value = highest_speed(&config, &fan);
-        assert_eq!(value, 0.33);
+        assert_eq!(value, 33.0);
     }
 
     #[test]
@@ -188,6 +188,6 @@ mod tests {
         let fan = Fan::wrap(hw, &config);
 
         let value = highest_speed(&config, &fan);
-        assert_eq!(value, 0.33);
+        assert_eq!(value, 33.0);
     }
 }
